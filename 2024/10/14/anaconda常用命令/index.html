@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>anaconda常用命令 | BitBlitz⚡</title><meta name="author" content="陈先森"><meta name="copyright" content="陈先森"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="chuangconda版本# 查看conda版本conda --version#查看conda的环境配置conda config --show  创建虚拟环境conda  create  --name  env_nameconda  create  --name  env_name python&#x3D;3.6 # 创建指定python版本conda  create  --name  env_name p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="anaconda常用命令">
+<meta property="og:url" content="https://blogs.bitblitz.cn/2024/10/14/anaconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="BitBlitz⚡">
+<meta property="og:description" content="chuangconda版本# 查看conda版本conda --version#查看conda的环境配置conda config --show  创建虚拟环境conda  create  --name  env_nameconda  create  --name  env_name python&#x3D;3.6 # 创建指定python版本conda  create  --name  env_name p">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blogs.bitblitz.cn/images/covers/cover%20(6).png">
+<meta property="article:published_time" content="2024-10-14T12:27:15.000Z">
+<meta property="article:modified_time" content="2024-10-14T13:23:19.451Z">
+<meta property="article:author" content="陈先森">
+<meta property="article:tag" content="anaconda">
+<meta property="article:tag" content="PyTorch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blogs.bitblitz.cn/images/covers/cover%20(6).png"><link rel="shortcut icon" href="/images/blitz_16.ico"><link rel="canonical" href="https://blogs.bitblitz.cn/2024/10/14/anaconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'anaconda常用命令',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-14 21:23:19'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/avatar.jpg" onerror="onerror=null;src='/imges/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/covers/cover (6).png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">BitBlitz⚡</span></a><a class="nav-page-title" href="/"><span class="site-name">anaconda常用命令</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">anaconda常用命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-14T12:27:15.000Z" title="发表于 2024-10-14 20:27:15">2024-10-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-14T13:23:19.451Z" title="更新于 2024-10-14 21:23:19">2024-10-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/anaconda/">anaconda</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="chuang"><a href="#chuang" class="headerlink" title="chuang"></a>chuang</h2><h2 id="conda版本"><a href="#conda版本" class="headerlink" title="conda版本"></a>conda版本</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看conda版本</span></span><br><span class="line">conda --version</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看conda的环境配置</span></span><br><span class="line">conda config --show</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda  create  --name  env_name</span><br><span class="line">conda  create  --name  env_name python=3.6 # 创建指定python版本</span><br><span class="line">conda  create  --name  env_name python=3.6 pandas numpy scipy # 创建指定python版本下包含某些包</span><br></pre></td></tr></table></figure>
+
+<h2 id="重要的pytorch"><a href="#重要的pytorch" class="headerlink" title="重要的pytorch"></a>重要的pytorch</h2><p>由于这个非常重要，所以我写在前面，创建新的虚拟环境后，我们还常常需要进行pytorch的安装，由于实验室的电脑是GPU版本的，故我选择安装GPU版本的pytorch</p>
+<p>首先进入新环境（比如我现在装的recbole）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda activate recbole</span><br></pre></td></tr></table></figure>
+
+<p>接着进入<a target="_blank" rel="noopener" href="https://pytorch.org/">PyTorch</a>官网，往下翻</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia</span><br></pre></td></tr></table></figure>
+
+<p>等待许久后，验证pytorch是不是GPU版本。</p>
+<p>打开编译器，虚拟环境选择新创建的环境recbole，运行一下代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(torch.__version__)</span><br><span class="line"><span class="built_in">print</span>(torch.cuda.is_available())</span><br></pre></td></tr></table></figure>
+
+<p>如果结果显示版本和True,即安装GPU版本成功。</p>
+<h2 id="激活-使用-进入某个虚拟环境"><a href="#激活-使用-进入某个虚拟环境" class="headerlink" title="激活&#x2F;使用&#x2F;进入某个虚拟环境"></a>激活&#x2F;使用&#x2F;进入某个虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">activate  env_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="退出当前环境"><a href="#退出当前环境" class="headerlink" title="退出当前环境"></a>退出当前环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+
+<h2 id="复制某个虚拟环境"><a href="#复制某个虚拟环境" class="headerlink" title="复制某个虚拟环境"></a>复制某个虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda  create  --name  new_env_name  --clone  old_env_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除某个环境"><a href="#删除某个环境" class="headerlink" title="删除某个环境"></a>删除某个环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda  remove  --name  env_name  --all</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看当前所有环境"><a href="#查看当前所有环境" class="headerlink" title="查看当前所有环境"></a>查看当前所有环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda  info  --envs   或者  conda  env  list</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看当前虚拟环境下的所有安装包"><a href="#查看当前虚拟环境下的所有安装包" class="headerlink" title="查看当前虚拟环境下的所有安装包"></a>查看当前虚拟环境下的所有安装包</h2><p>前提需要进入该虚拟环境</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">activate  env_name</span><br><span class="line"></span><br><span class="line">conda  list </span><br></pre></td></tr></table></figure>
+
+<p>直接查看</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda  list  -n  env_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装或卸载包-进入虚拟环境之后）"><a href="#安装或卸载包-进入虚拟环境之后）" class="headerlink" title="安装或卸载包(进入虚拟环境之后）"></a>安装或卸载包(进入虚拟环境之后）</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda  install  requests</span><br><span class="line">conda  install  xx=版本号  # 指定版本号</span><br><span class="line">conda  install  xxx -i 源名称或链接 # 指定下载源</span><br><span class="line">conda  uninstall  xxx</span><br></pre></td></tr></table></figure>
+
+<h2 id="分享虚拟环境"><a href="#分享虚拟环境" class="headerlink" title="分享虚拟环境"></a>分享虚拟环境</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda env export &gt; environment.yml  # 导出当前虚拟环境</span><br><span class="line">conda env create -f environment.yml  # 创建保存的虚拟环境</span><br></pre></td></tr></table></figure>
+
+<h2 id="源服务器管理"><a href="#源服务器管理" class="headerlink" title="源服务器管理"></a>源服务器管理</h2><p>conda当前的源设置在$HOME&#x2F;.condarc中，可通过文本查看器查看或者使用命令&gt;conda config –show-sources查看。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda config --show-sources #查看当前使用源</span><br><span class="line">conda config --remove channels 源名称或链接 #删除指定源</span><br><span class="line">conda config --add channels 源名称或链接 #添加指定源</span><br></pre></td></tr></table></figure>
+
+<p>举例如下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br></pre></td></tr></table></figure>
+
+<p>国内pip源</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">阿里云 http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"></span><br><span class="line">中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/</span><br><span class="line"></span><br><span class="line">豆瓣(douban) http://pypi.douban.com/simple/</span><br><span class="line"></span><br><span class="line">清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/</span><br><span class="line"></span><br><span class="line">中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置清华源，里面的命令要一行一行执行</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro/</span><br><span class="line">conda config --set show_channel_urls yes</span><br></pre></td></tr></table></figure>
+
+<p>注意配置后不管哪个虚拟环境，最后下载包的源都是清华源</p>
+<h2 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda  update  conda</span><br><span class="line">conda  update  anaconda</span><br></pre></td></tr></table></figure>
+
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm  -rf  anaconda</span><br></pre></td></tr></table></figure>
+
+<h2 id="批量导出虚拟环境中的所有组件"><a href="#批量导出虚拟环境中的所有组件" class="headerlink" title="批量导出虚拟环境中的所有组件"></a>批量导出虚拟环境中的所有组件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda list -e &gt; requirements.txt  # 导出</span><br><span class="line">conda install --yes --file requirements.txt  # 安装</span><br></pre></td></tr></table></figure>
+
+<h2 id="pip批量导出环境中的所有组件"><a href="#pip批量导出环境中的所有组件" class="headerlink" title="pip批量导出环境中的所有组件"></a>pip批量导出环境中的所有组件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>本文绝大部分参考该博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_59236127/article/details/137740231">anaconda常用命令大全（保姆级别建议收藏)_anaconda命令-CSDN博客</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blogs.bitblitz.cn">陈先森</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blogs.bitblitz.cn/2024/10/14/anaconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">https://blogs.bitblitz.cn/2024/10/14/anaconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blogs.bitblitz.cn" target="_blank">BitBlitz⚡</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/anaconda/">anaconda</a><a class="post-meta__tags" href="/tags/PyTorch/">PyTorch</a></div><div class="post-share"><div class="social-share" data-image="/images/covers/cover%20(6).png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="next-post pull-full" href="/2024/10/13/vue-%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0/" title="vue_快速复习"><img class="cover" src="/images/covers/cover%20(5).png" onerror="onerror=null;src='/imges/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">vue_快速复习</div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/imges/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">陈先森</div><div class="author-info-description">记录⚡的开发学习生活</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#chuang"><span class="toc-number">1.</span> <span class="toc-text">chuang</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conda%E7%89%88%E6%9C%AC"><span class="toc-number">2.</span> <span class="toc-text">conda版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">3.</span> <span class="toc-text">创建虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84pytorch"><span class="toc-number">4.</span> <span class="toc-text">重要的pytorch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB-%E4%BD%BF%E7%94%A8-%E8%BF%9B%E5%85%A5%E6%9F%90%E4%B8%AA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">5.</span> <span class="toc-text">激活&#x2F;使用&#x2F;进入某个虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%80%E5%87%BA%E5%BD%93%E5%89%8D%E7%8E%AF%E5%A2%83"><span class="toc-number">6.</span> <span class="toc-text">退出当前环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E6%9F%90%E4%B8%AA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">7.</span> <span class="toc-text">复制某个虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E7%8E%AF%E5%A2%83"><span class="toc-number">8.</span> <span class="toc-text">删除某个环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%89%80%E6%9C%89%E7%8E%AF%E5%A2%83"><span class="toc-number">9.</span> <span class="toc-text">查看当前所有环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-number">10.</span> <span class="toc-text">查看当前虚拟环境下的所有安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%88%96%E5%8D%B8%E8%BD%BD%E5%8C%85-%E8%BF%9B%E5%85%A5%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%B9%8B%E5%90%8E%EF%BC%89"><span class="toc-number">11.</span> <span class="toc-text">安装或卸载包(进入虚拟环境之后）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E4%BA%AB%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">12.</span> <span class="toc-text">分享虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86"><span class="toc-number">13.</span> <span class="toc-text">源服务器管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%87%E7%BA%A7"><span class="toc-number">14.</span> <span class="toc-text">升级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD"><span class="toc-number">15.</span> <span class="toc-text">卸载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6"><span class="toc-number">16.</span> <span class="toc-text">批量导出虚拟环境中的所有组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pip%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6"><span class="toc-number">17.</span> <span class="toc-text">pip批量导出环境中的所有组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%84%9F%E8%B0%A2"><span class="toc-number">18.</span> <span class="toc-text">感谢</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/10/14/anaconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="anaconda常用命令"><img src="/images/covers/cover%20(6).png" onerror="this.onerror=null;this.src='/imges/404.jpg'" alt="anaconda常用命令"/></a><div class="content"><a class="title" href="/2024/10/14/anaconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="anaconda常用命令">anaconda常用命令</a><time datetime="2024-10-14T12:27:15.000Z" title="发表于 2024-10-14 20:27:15">2024-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/13/vue-%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0/" title="vue_快速复习"><img src="/images/covers/cover%20(5).png" onerror="this.onerror=null;this.src='/imges/404.jpg'" alt="vue_快速复习"/></a><div class="content"><a class="title" href="/2024/10/13/vue-%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0/" title="vue_快速复习">vue_快速复习</a><time datetime="2024-10-13T12:17:13.000Z" title="发表于 2024-10-13 20:17:13">2024-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/13/Cloudflare%E4%BB%A3%E7%90%86/" title="Cloudflare代理"><img src="/images/covers/cover%20(8).png" onerror="this.onerror=null;this.src='/imges/404.jpg'" alt="Cloudflare代理"/></a><div class="content"><a class="title" href="/2024/10/13/Cloudflare%E4%BB%A3%E7%90%86/" title="Cloudflare代理">Cloudflare代理</a><time datetime="2024-10-13T07:51:13.000Z" title="发表于 2024-10-13 15:51:13">2024-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/11/Blogs-topBG-and-Avatar/" title="Blogs_topBG_and_Avatar_change"><img src="/images/covers/cover%20(2).png" onerror="this.onerror=null;this.src='/imges/404.jpg'" alt="Blogs_topBG_and_Avatar_change"/></a><div class="content"><a class="title" href="/2024/10/11/Blogs-topBG-and-Avatar/" title="Blogs_topBG_and_Avatar_change">Blogs_topBG_and_Avatar_change</a><time datetime="2024-10-11T12:46:46.000Z" title="发表于 2024-10-11 20:46:46">2024-10-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/10/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B0%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="域名购买与使用"><img src="/images/covers/cover%20(3).png" onerror="this.onerror=null;this.src='/imges/404.jpg'" alt="域名购买与使用"/></a><div class="content"><a class="title" href="/2024/10/10/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B0%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="域名购买与使用">域名购买与使用</a><time datetime="2024-10-10T07:56:44.000Z" title="发表于 2024-10-10 15:56:44">2024-10-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By 陈先森</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
